@@ -23,14 +23,14 @@ function init() {
   character = new Character(150, 480, 50, 50);
   character.vy = character.initialVelocity;
 
-  let platform = new Platform(130, 520, 80, 20);
+  let platform = new Platform(130, 540, 80, 20);
   platforms.push(platform);
 
   //generate the starting platforms
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 6; i++) {
     let platform = new Platform(
       generateRandomPositions(0, canvas.clientWidth - 80),
-      canvas.height - 80 * i - 160,
+      canvas.height - 80 * i - 140,
       80,
       20
     );

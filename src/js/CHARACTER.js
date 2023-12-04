@@ -2,7 +2,7 @@ class Character {
   constructor(x, y, width, height) {
     this.x = x;
     this.y = y;
-    this.initialVelocity = -8;
+    this.initialVelocity = -6;
     this.width = width;
     this.height = height;
     this.vx = SPEEDX;
@@ -19,24 +19,13 @@ class Character {
     if (this.vy > 0) {
       y = 0;
     } else {
-      y = 200;
-      height = 600;
+      y = 150;
+      height = 200;
     }
-    ctx.drawImage(
-      this.image,
-      x,
-      y,
-      width,
-      height,
-      this.x,
-      this.y,
-      this.width,
-      600
-    );
+    ctx.drawImage(this.image, x, y, width, height, this.x, this.y, 50, 50);
   }
 
   collisionWithWalls() {
-    movement.isGrounded = false;
     if (this.x + this.width > canvas.width) {
       this.x = 0;
     } else if (this.x < 0) {
